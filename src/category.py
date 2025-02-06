@@ -1,6 +1,3 @@
-from src.product import Product
-
-
 class Category:
     name: str
     description: str
@@ -14,7 +11,3 @@ class Category:
         self.products = products if products else []
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
-
-
-if __name__ == '__main__':
-    pass
