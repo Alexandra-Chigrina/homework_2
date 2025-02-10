@@ -34,6 +34,16 @@ def product():
 
 
 @pytest.fixture
+def product_2():
+    return {"name": "Xiaomi Redmi Note 9", "description": "1024GB, Черный", "price": 29500.0, "quantity": 7}
+
+
+@pytest.fixture
+def product_3():
+    return {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 30000.0, "quantity": 2}
+
+
+@pytest.fixture
 def categories_list():
     return [
         {
