@@ -60,3 +60,11 @@ def test_new_product(product_2, product_3, first_category):
     assert new_updated_product.description == "1024GB, Синий"
     assert new_updated_product.price == 31000.0
     assert new_updated_product.quantity == 16
+
+
+def test_product_str(product):
+    assert str(product) == 'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.'
+
+
+def test_product_add(product, product_4):
+    assert product + product_4 == 2114000.0

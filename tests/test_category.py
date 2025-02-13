@@ -25,3 +25,7 @@ def test_category_add_product(first_category, product):
     assert len(first_category.get_products) == 3
     first_category.add_product(product)
     assert len(first_category.get_products) == 4
+
+
+def test_category_str(first_category):
+    assert str(first_category) == "Смартфоны, количество продуктов: 27 шт."
