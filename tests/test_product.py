@@ -63,7 +63,7 @@ def test_new_product(product_2, product_3, first_category):
 
 
 def test_product_str(product):
-    assert str(product) == 'Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт.'
+    assert str(product) == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 14 шт."
 
 
 def test_product_add(product, product_4):
