@@ -1,7 +1,6 @@
 from unittest.mock import mock_open, patch
 
 from src.category import Category
-from src.product import Product
 from src.utils import create_objects_from_json, read_json
 
 
@@ -46,6 +45,7 @@ def test_read_json_not_found(mock_file):
 
 def test_create_objects_from_json(categories_list):
     categories_data = create_objects_from_json(categories_list)
+
     assert categories_data[0].name == "Смартфоны"
     assert categories_data[1].description == (
         "Современный телевизор, который позволяет наслаждаться просмотром, " "станет вашим другом и помощником"
@@ -53,6 +53,7 @@ def test_create_objects_from_json(categories_list):
     assert isinstance((categories_data[0]), Category)
 
     test_product = categories_data[0].products[2]
-    assert isinstance(test_product, Product)
-    assert test_product.name == "Xiaomi Redmi Note 11"
-    assert test_product.quantity == 14
+    assert isinstance(test_product, str)
+    assert "Xiaomi Redmi Note 11" in categories_data[0].products.split("\n")[:-1][2]
+    assert "210000.0 руб." in categories_data[0].products.split("\n")[1]
+    assert "Остаток: 5 шт." in categories_data[0].products.split("\n")[0]
