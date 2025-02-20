@@ -74,4 +74,4 @@ def test_product_add(product, product_4):
 
 def test_product_add_error(product):
     with pytest.raises(TypeError):
-        result = product + 1
+        assert product + 1

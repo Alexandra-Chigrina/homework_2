@@ -18,4 +18,4 @@ def test_smartphone_add(smartphone1, smartphone2):
 
 def test_smartphone_add_error(smartphone1):
     with pytest.raises(TypeError):
-        result = smartphone1 + 1
+        assert smartphone1 + 1

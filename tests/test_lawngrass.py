@@ -17,4 +17,4 @@ def test_smartphone_add(lawngrass1, lawngrass2):
 
 def test_smartphone_add_error(lawngrass1):
     with pytest.raises(TypeError):
-        result = lawngrass1 + 1
+        assert lawngrass1 + 1
