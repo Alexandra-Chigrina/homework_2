@@ -5,6 +5,8 @@ from src.product import Product
 
 
 class ProductIterator:
+    """Класс для перебора товара по одной категории"""
+
     def __init__(self, category_obj: Category):
         self.category = category_obj
         self.index = 0
