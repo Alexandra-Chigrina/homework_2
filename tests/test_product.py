@@ -24,13 +24,13 @@ def test_price_setter_positive(product):
 def test_price_setter_zero(capsys, product):
     product.price = 0.0
     message = capsys.readouterr()
-    assert message.out.strip().split('\n')[-1] == "Цена не должна быть нулевой или отрицательной"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевой или отрицательной"
 
 
 def test_price_setter_negative(capsys, product):
     product.price = -210.5
     message = capsys.readouterr()
-    assert message.out.strip().split('\n')[-1] == "Цена не должна быть нулевой или отрицательной"
+    assert message.out.strip().split("\n")[-1] == "Цена не должна быть нулевой или отрицательной"
 
 
 @patch("builtins.input", return_value="n")
@@ -38,7 +38,7 @@ def test_price_setter_lower_price_decline(mock_input, capsys, product):
     product.price = 30000.0
     assert product.price == 31000.0
     message = capsys.readouterr()
-    assert message.out.strip().split('\n')[-1] == "Изменение цены отменено"
+    assert message.out.strip().split("\n")[-1] == "Изменение цены отменено"
 
 
 @patch("builtins.input", return_value="y")

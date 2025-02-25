@@ -15,6 +15,8 @@ def test_order_total_value(product):
 
 def test_order_str(product):
     order = Order(product, 5)
-    assert str(order) == ("Заказ: Xiaomi Redmi Note 11 * 5 шт.\n"
-                          "Цена за единицу: 31000.0 руб.\n"
-                          "Общая стоимость заказа: 155000.0 руб.")
+    assert str(order) == (
+        "Заказ: Xiaomi Redmi Note 11 * 5 шт.\n"
+        "Цена за единицу: 31000.0 руб.\n"
+        "Общая стоимость заказа: 155000.0 руб."
+    )
