@@ -1,7 +1,8 @@
 from src.product import Product
+from src.base_features import BaseFeatures
 
 
-class Category:
+class Category():
     name: str
     description: str
     category_count = 0
@@ -17,6 +18,9 @@ class Category:
     def __str__(self) -> str:
         total_quantity = sum(product.quantity for product in self.__products)
         return f"{self.name}, количество продуктов: {total_quantity} шт."
+
+    def total_value(self) -> float:
+        return sum(product.price * product.quantity for product in self.__products)
 
     def add_product(self, product: Product) -> None:
         """Добавляет новые товары в категорию"""

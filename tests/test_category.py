@@ -24,6 +24,10 @@ def test_category_products_property(first_category):
     )
 
 
+def test_total_value(first_category):
+    assert first_category.total_value() == 3014000.0
+
+
 def test_category_add_product(first_category, product):
     assert len(first_category.get_products) == 3
     first_category.add_product(product)
