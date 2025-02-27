@@ -38,10 +38,19 @@ python main.py
 
 2. Описание основных функций и классов
 
-* В модуле src/product.py создан класс Product, который представляет товар с его характеристиками.
-* В модуле src/category.py создан класс Category, представляет категорию товаров, содержащую список продуктов.
+* В модуле src/base_product.py создан базовый абстрактный класс BaseProduct.
+* В модуле src/base_features.py создан базовый абстрактный класс BaseFeatures.
+* В модуле src/print_mixin.py создан класс-миксин PrintMixin, печатающий при создании объекта в консоль информацию 
+  о том, от какого класса и с какими параметрами был создан объект.
+* В модуле src/product.py создан класс Product (наследник класса BaseProduct, PrintMixin), 
+  который представляет товар с его характеристиками.
+* В модуле src/category.py создан класс Category (наследник класса BaseFeatures), представляет категорию товаров, 
+  содержащую список продуктов.
 * В модуле src/smartphone.py создан класс "Смартфон" (Smartphone) (наследник класса Product).
 * В модуле src/lawngrass.py создан класс "Трава газонная" (LawnGrass) (наследник класса Product).
+* В модуле src/order.py создан класс Order (наследник класса BaseFeatures), в котором дается информация о том, 
+  какой товар был куплен, количество купленного товара, а также итоговая стоимость.
+
 
 
 ## **Примеры работы**:
@@ -79,8 +88,12 @@ pytest --cov=src --cov-report=term-missing tests/
 ## **Структура проекта**
 
 ├── src/                          # Основной код
+│   ├── base_features.py          # Создание абстрактного класса BaseFeatures
+│   ├── base_product.py           # Создание абстрактного класса BaseProduct
 │   ├── category.py               # Создание класса Category
 │   ├── lawngrass.py              # Создание класса LawnGrass
+│   ├── order.py                  # Создание класса Order
+│   ├── print_mixin.py            # Создание класса-миксина PrintMixin
 │   ├── product.py                # Создание класса Product
 │   ├── product_iterator.py       # Создание класса ProductIterator
 │   ├── smartphone.py             # Создание класса Smartphone
@@ -91,6 +104,7 @@ pytest --cov=src --cov-report=term-missing tests/
 │   ├── conftest.py               # Фикстуры для тестов
 │   ├── test_category.py          # Тесты для category.py
 │   ├── test_lawngrass.py         # Тесты для lawngrass.py
+│   ├── test_order.py             # Тесты для order.py
 │   ├── test_product.py           # Тесты для product.py
 │   ├── test_product_iterator.py  # Тесты для product_iterator.py
 │   ├── test_smartphone.py        # Тесты для smartphone.py
