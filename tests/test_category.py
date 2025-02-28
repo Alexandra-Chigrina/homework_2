@@ -46,3 +46,8 @@ def test_add_product_error(first_category, product):
 def test_add_product_smartphone(first_category, smartphone1):
     first_category.add_product(smartphone1)
     assert first_category.get_products[-1].color == "Серый"
+
+
+def test_middle_price(first_category, category_without_product):
+    assert first_category.middle_price() == 140333.33
+    assert category_without_product.middle_price() == 0
