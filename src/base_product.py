@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
+
 class BaseProduct(ABC):  # pragma: no cover
     """Абстрактный базовый класс для всех продуктов"""
 
