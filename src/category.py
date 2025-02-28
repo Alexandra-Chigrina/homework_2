@@ -1,3 +1,5 @@
+from typing import Union
+
 from src.base_features import BaseFeatures
 from src.product import Product
 
@@ -8,7 +10,7 @@ class Category(BaseFeatures):
     category_count = 0
     product_count = 0
 
-    def __init__(self, name: str, description: str, products: list) -> None:
+    def __init__(self, name: str, description: str, products: list[Product]) -> None:
         self.name = name
         self.description = description
         self.__products = products if products else []
@@ -41,7 +43,7 @@ class Category(BaseFeatures):
     def get_products(self) -> list["Product"]:
         return self.__products
 
-    def middle_price(self):
+    def middle_price(self) -> Union[float, int]:
         try:
             return round(sum([product.price for product in self.__products]) / len(self.__products), 2)
         except ZeroDivisionError:

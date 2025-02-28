@@ -12,6 +12,11 @@ def test_product_init(product):
     assert product.quantity == 14
 
 
+def test_product_init_error():
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 0)
+
+
 def test_price_property(product):
     assert product.price == 31000.00
 
